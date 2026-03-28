@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UFT-8"
+    <title>Checkout</title>
+    <script
+src="https://js.scripe.com/v3/"></script>
+</head>
+</body>
+<h1>Checkout</h1>
+<button id="checkout-button">Pay Now</button>
+<script>
+    const stripe =
+Stripe("pk_test_51TE117J7yQR4mtclNQ6SKM9T4weTMZG4Xp7v4WgNMpm3mpWnt7rZkTHeuUdme7mkfYguNryVX2ATsTKsAv0HGjf400L7htrWn4");
+    const cart =
+JSON.parse(localStorage.getItem("cart"));
+{};
+document.getElementById("checkout-button")
+.addEventListener("click", async function () {
+     const response = await fetch("/create-checkout-response", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cart: cart })
+      });
+     const session = await response.json();
+        stripe.redirectToCheckout({
+            sessionId: session.id
+        });
+      });
+    </script>
+<script src="script.js"></script> <!-- Put at the bottom before </body> -->
+</body>
+</body>
+</html>
