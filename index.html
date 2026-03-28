@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nay & Glow | Luxury Handmade</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+
+<!-- FLOATING BLOBS -->
+<div class="blob"></div>
+<div class="blob"></div>
+
+<!-- HEADER -->
+<header class="hero-header">
+
+    <div class="header-top">
+        <button onclick="toggleCart()">🛒 Cart</button>
+    </div>
+
+    <div class="header-center">
+        <h1>Nay & Glow</h1>
+        <p>Luxury handmade products | Soft scents | Cozy vibes</p>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="deals.html">Deals</a>
+        <a href="contact.html">Contact</a>
+        <a href="about-us.html">About Us</a>
+    </nav>
+
+</header>
+
+<!-- MAIN -->
+<main>
+
+<section class="container">
+    <h2>Featured Collection</h2>
+
+    <div class="products-grid">
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3>Vanilla Swirl</h3>
+            <p>$7.49</p>
+            <button onclick="addToCart('vanilla')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3>Strawberry Kingdom</h3>
+            <p>$7.49</p>
+            <button onclick="addToCart('strawberry')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3>Lavender Paradise</h3>
+            <p>$7.49</p>
+            <button onclick="addToCart('lavender')">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<!-- CART -->
+<section class="cart" id="cart-drawer">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <h3 id="total">Total: $0.00</h3>
+    <button onclick="checkout()">Checkout</button>
+</section>
+
+<!-- CHECKOUT POPUP -->
+<div id="checkout-popup" class="popup">
+  <div class="popup-content">
+    <h2>Shipping Details</h2>
+
+    <input type="email" id="email" placeholder="Email *">
+    <input type="text" id="phone" placeholder="Phone (optional)">
+    <input type="text" id="address" placeholder="Shipping Address *">
+
+    <button onclick="submitCheckout()">Continue</button>
+    <button onclick="closePopup()">Cancel</button>
+  </div>
+</div>
+
+</body>
+</html>
